@@ -12,7 +12,7 @@ const employeesSlice = createSlice({
         employessRestored: (employees, action) => action.payload.employess,
 
         employeeDeleted: (employees, action) =>
-            employees.list.filter((employee) => employee.id !== action.payload.id),
+            employees.filter((employee) => employee.id !== action.payload.id),
     },
 });
 
@@ -34,7 +34,7 @@ export const restoreEmployees = (employees) => employeesRestored({ employees });
 export const deleteEmployee = (id) =>
     apiCallBegan({
         baseUrl,
-        url: `${id}`,
+        url: `employees/${id}`,
         method: "delete",
         onSuccess: employeeDeleted.type,
         payload: { id },
