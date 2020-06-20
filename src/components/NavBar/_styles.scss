@@ -1,0 +1,38 @@
+div { 
+    border: solid red 1px;
+}
+
+.navbar {
+    @include flex(space-between, center, row);
+    height: auto;
+    background-color: "transparent";
+    ul {
+        @include flex(center, center, row);
+        width: auto;
+        list-style: none;
+        font-size: .8rem;
+        .link {
+            text-decoration: none;
+        }
+        li {
+            color: #fff;
+            margin: .5rem;
+            padding: .2rem;
+            cursor: pointer;
+        }
+        .selected {
+            border: solid 1px yellow;
+            background-color: #fff;
+            border-radius: 30px;
+            li {
+                color: #5851EA;
+            }
+        }
+
+    }
+}
+
+.solid {
+    background: rgb(88,81,234);
+    background: linear-gradient(0deg, rgba(88,81,234,1) 0%, rgba(59,57,255,1) 100%, rgba(116,116,255,1) 100%);
+}
