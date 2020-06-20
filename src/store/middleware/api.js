@@ -1,7 +1,7 @@
 import { apiCallBegan, apiCallSucceeded, apiCallFailed } from "../api";
 import http from "../../services/http";
 
-export default ({ dispatch, getState }) => next => async action => {
+export default ({ dispatch }) => next => async action => {
     if (action.type !== apiCallBegan.type) return next(action);
 
     next(action);
