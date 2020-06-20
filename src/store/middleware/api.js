@@ -1,15 +1,14 @@
 import { apiCallBegan, apiCallSucceeded, apiCallFailed } from "../api";
-import axios from "axios";
+import http from "../../services/http";
 
 export default ({ dispatch, getState }) => next => async action => {
     if (action.type !== apiCallBegan.type) return next(action);
 
     next(action);
-
     const { baseUrl, url, method, data, headers, onSuccess, onError, payload } = action.payload;
 
     try {
-        const { data: response } = await axios.request({ url: `${baseUrl}${url}`, method, data, headers });
+        const { data: response } = await http.request({ url: `${baseUrl}${url}`, method, data, headers });
         if (onSuccess) dispatch({ type: onSuccess, payload: { ...payload, ...response } });
         dispatch(apiCallSucceeded());
     } catch (e) {

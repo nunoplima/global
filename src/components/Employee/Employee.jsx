@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTimes, faUserCircle } from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +21,9 @@ const Employee = ({ employee, onDelete }) => {
                     <p>Employee ID: {id}</p>
                 </div>
                 <div className="card-header-buttons">
-                    <FontAwesomeIcon icon={faPen}/>
+                    <Link to={`/employees/${id}`}>
+                        <FontAwesomeIcon icon={faPen}/>
+                    </Link>
                     <FontAwesomeIcon icon={faTimes} onClick={() => onDelete(id)}/>
                 </div>
             </div>
