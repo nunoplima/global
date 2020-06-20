@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Joi from "joi-browser";
 import moment from "moment";
 import Form from "../common/Form";
-import { getEmployee } from "../../services/employeeService";
+import { getEmployee } from "../../services/employeesService";
 import { saveEmployee } from "../../store/employees";
 
 class EmployeeForm extends Form {
@@ -14,10 +14,9 @@ class EmployeeForm extends Form {
             if (employeeId === "new") {
                 const today = moment(Date.now()).format("YYYY-MM-DD");
                 return this.setState({ data: { address: "test address", name: "test", birthdate: "1992-10-02", status: "Inactive", position: "Developer", created: today, updated: today }});
-
                 // return this.setState({ data: { created: today, updated: today }});
             };
-            // otherwise get the employee from de database
+            // otherwise get the employee from de database and populate fields
             const { data: { employee } } = await getEmployee(employeeId);
             this.setState({ data: employee })
         } catch(ex) {
@@ -28,8 +27,12 @@ class EmployeeForm extends Form {
     }
 
     doSubmit = async () => {
-        await this.props.saveEmployee(this.state.data);
-        this.props.history.push("/employees");
+        try {
+            await this.props.saveEmployee(this.state.data);
+            this.props.history.push("/employees");
+        } catch(ex) {
+            console.log(ex);
+        }
     };
 
     schema = {
