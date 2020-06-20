@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getEmployees } from "../../store/employees";
 
 const Employees = () => {
-    return <div>Employees</div>;
+    const dispatch = useDispatch();
+    const employees = useSelector((s) => s.employees);
+
+    useEffect(() => {
+        dispatch(getEmployees());
+    }, [dispatch]);
+
+    return <div>{employees.map(e => e.name)}</div>;
 };
 
 export default Employees;
