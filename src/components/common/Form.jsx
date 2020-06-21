@@ -68,9 +68,10 @@ class Form extends Component {
         );
     };
 
-    renderButton = label => (
-        <input type="submit" disabled={this.validate()} className="" value={label} />
-    );
+    renderButton = label => {
+        const isInvalid = this.validate();
+        return <input type="submit" disabled={isInvalid} className={isInvalid ? "disabled" : ""} value={label} />
+    };
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -78,7 +79,7 @@ class Form extends Component {
         if (errors) {
             return this.setState({ errors });
         }
-        // submition method specific to each instance
+        // submition method specific to each component that extends this one
         this.doSubmit();
     };
 }

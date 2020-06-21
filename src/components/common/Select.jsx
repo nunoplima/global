@@ -2,8 +2,8 @@ import React from "react";
 
 const Select = ({ label, name, options, value, error, onChange }) => {
     return (
-        <div className="">
-            <label htmlFor={name}>{label}</label>
+        <div className="float-container">
+            <label htmlFor={name}>{label}: </label>
             <select
                 className=""
                 name={name}
@@ -19,7 +19,7 @@ const Select = ({ label, name, options, value, error, onChange }) => {
                 ))}
             </select>
 
-            {error && <div className="">{error}</div>}
+            {error && <div className="error">{error}</div>}
         </div>
     );
 };
