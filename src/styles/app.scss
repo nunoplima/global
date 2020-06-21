@@ -1,3 +1,24 @@
+// variables
+$purple-color: #5851ea;
+$blue-color: #4137ffd0;
+$light-color: #fff;
+$navbar-height: 4.5rem;
+$purple-gradient: linear-gradient(0deg, rgba(88,81,234,1) 0%, rgba(59,57,255,1) 100%, rgba(116,116,255,1) 100%);
+
+// mixins
+@mixin flex($content, $items, $direction) {
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+    flex-direction: $direction;
+}
+
+@mixin button($color) {
+    border-radius: 30px;
+    background-color: $color;
+    padding: 0.1rem 0.6rem;
+}
+
 // Main styles
 
 // Set the global `box-sizing` state to `border-box`.
@@ -13,10 +34,10 @@ html {
 
 html,
 body,
-#root{
+#root {
     width: 100%;
     height: 100%;
-    // background-color: #5851EA;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -36,9 +57,12 @@ body,
 body {
     font-family: "Open Sans", sans-serif;
     // line-height: 1.5rem;
-    color: #000000;
+    color: #7b7b7b;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a:visited {
@@ -47,17 +71,22 @@ a:visited {
 
 .title {
     font-family: "Poppins", sans-serif;
+    color: #000;
 }
 
-// mixins
-@mixin flex($content, $items, $direction) {
-    display: flex;
-    justify-content: $content;
-    align-items: $items;
-    direction: $direction;    
+.purple-button {
+    border-radius: 30px;
+    background: $purple-gradient;
+    color: $light-color;
+    padding: .6rem 2.5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
+    -moz-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
+    box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
+    text-shadow: 0 -1px 0 $blue-color;
 }
-
 // Component imports
 // @import "../containers/App/styles";
 // @import "../containers/Login/styles";
+@import "../components/Home/styles";
 @import "../components/NavBar/styles";

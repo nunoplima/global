@@ -4,8 +4,8 @@ div {
 
 .navbar {
     @include flex(space-between, center, row);
-    height: auto;
-    background-color: "transparent";
+    height: $navbar-height;
+    background-color: "transparent";    
     ul {
         @include flex(center, center, row);
         width: auto;
@@ -17,13 +17,10 @@ div {
         li {
             color: #fff;
             margin: .5rem;
-            padding: .2rem;
             cursor: pointer;
         }
         .selected {
-            border: solid 1px yellow;
-            background-color: #fff;
-            border-radius: 30px;
+            @include button(#fff);
             li {
                 color: #5851EA;
             }
@@ -33,6 +30,6 @@ div {
 }
 
 .solid {
-    background: rgb(88,81,234);
-    background: linear-gradient(0deg, rgba(88,81,234,1) 0%, rgba(59,57,255,1) 100%, rgba(116,116,255,1) 100%);
+    background: $purple-gradient;
+    // background: rgb(88,81,234);
 }

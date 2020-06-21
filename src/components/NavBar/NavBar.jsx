@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const NavBar = () => {
     const { isAdmin } = useSelector((state) => state.user);
     return (
-        <div className={isAdmin ? "solid" : ""}>
+        <header className={isAdmin ? "solid" : ""}>
             <div className="container navbar">
                 <Link to="/">
                     <img className="logo" src={Logo} alt="logo" />
@@ -31,7 +31,7 @@ const NavBar = () => {
                     )}
                 </ul>
             </div>
-        </div>
+        </header>
     );
 };
 
