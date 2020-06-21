@@ -44,7 +44,7 @@ const Home = () => {
                             <div className="purple-button title">Learn More</div>
                         </div>
                     </div>
-                    <img src={Curve} alt="curve" className="curve" />
+                    <img src={Curve} alt="curve" className="home-curve" />
                     <img src={Circle} alt="circle" className="circle" />
                 </div>
             </div>
