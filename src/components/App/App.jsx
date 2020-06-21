@@ -21,7 +21,7 @@ const App = () => {
     return (
 		<>
 			<NavBar />
-			<main className="container">
+			<main>
 				<Switch>
 					<Route path="/employees/:employeeId" component={EmployeeForm}/>
 					<Route path="/employees" component={Employees} />

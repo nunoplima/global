@@ -1,0 +1,102 @@
+.hero {
+    background: url("../../assets/images/img-full-landing.png") no-repeat center;
+    background-size: cover;
+    background-color: $purple-color;
+    height: 100vh;
+    margin-top: -$navbar-height;
+    .hero-text-container {
+        height: 100%;
+        width: 40%;
+        margin: auto;
+        @include flex(center, center, column);
+        text-align: center;
+        .hero-text {
+            font-size: 2.5rem;
+            color: $light-color;
+        }
+        .hero-button {
+            @include button(#fff);
+            padding: .5rem 3.5rem;
+            text-decoration: none;
+            color: $purple-color;
+        }
+    }
+}
+
+.content-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 6rem;
+    .content-subtitle {
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        hr {
+            border: solid 1px $blue-color;
+            background-color: $blue-color;
+            width: 4rem;
+            border-radius: 25%;
+        }
+        p {
+            margin-top: 1.5rem;
+            font-size: .8rem;
+        }
+    }
+    .content-inner-container {
+        height: 100vh;
+        margin-bottom: 9rem;
+        @include flex(center, center, row);
+        overflow: hidden;
+        .content-image {
+            background: url("../../assets/images/img-landing.png") no-repeat center;
+            background-size: contain;
+            transform: scale(1.1);
+            object-fit: contain;
+            height: 100%;
+            flex: 1;
+        }
+        .content-info-container {
+            flex: 1;
+            .content-info {
+                @include flex(center, flex-start, column);
+                padding-left: 6rem;
+                width: 80%;
+                h2 {
+                    margin: 1.5rem 0; 
+                }
+                hr {
+                    margin: 0;
+                    border: 1.5px solid $purple-color;
+                    background-color: $purple-color;
+                    width: 5rem;
+                    border-radius: 25%;
+                }
+                p {
+                    padding: 1.5rem 0;
+                }
+            }
+        }
+        .curve {
+            z-index: -1;
+            position: absolute;
+            // top: 15%;
+            // top: 20%;
+            // right: -5%;
+            // right: 10%;
+            height: 310vh;
+            // top: 30%;
+            top: 13rem;
+
+        }
+        .circle {
+            z-index: -1;
+            position: absolute;
+            height: 35%;
+            width: auto;
+            // top: 70%;
+            bottom: -1.5rem;
+            // right: -15%;
+            right: -12rem
+        }
+    }
+}
