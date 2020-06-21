@@ -5,6 +5,8 @@ import moment from "moment";
 import Form from "../common/Form";
 import { getEmployee } from "../../services/employeesService";
 import { saveEmployee } from "../../store/employees";
+import Curve from "../../assets/images/curve.png";
+import Square from "../../assets/images/el-1.svg";
 
 class EmployeeForm extends Form {
     async componentDidMount() {
@@ -51,21 +53,32 @@ class EmployeeForm extends Form {
         const isNewEmployee = this.props.match.params.employeeId === "new";
 
         return (
-            <form onSubmit={this.handleSubmit}>
-                {isNewEmployee ? <h1>New Employee</h1> : <h1>Edit Employee</h1>}
+            <div className="form-container">
+                <div className="title-container">
+                    {isNewEmployee ? <h1 className="title-text title">New Employee</h1> : <h1>Edit Employee</h1>}
+                </div>
+                <form className="form" onSubmit={this.handleSubmit}>
 
-                {isNewEmployee ? null : this.renderInput("id", "Employee ID", "number")}
+                    {isNewEmployee ? null : this.renderInput("id", "Employee ID", "number")}
 
-                {this.renderInput("name", "Name: ", "text")}
-                {this.renderInput("birthdate", "Birthdate: ", "date")}
-                {this.renderInput("address", "Address: ", "text")}
-                {this.renderSelect("status", "Status", ["Active", "Inactive"])}
-                {this.renderInput("position", "Position: ", "text")}
-                {this.renderInput("created", "Created: ", "date")}
-                {this.renderInput("updated", "Updated: ", "date")}
+                    {this.renderInput("name", "Name: ", "text")}
+                    {this.renderInput("birthdate", "Birthdate: ", "date")}
+                    {this.renderInput("address", "Address: ", "text")}
+                    {this.renderSelect("status", "Status", ["Active", "Inactive"])}
+                    {this.renderInput("position", "Position: ", "text")}
+                    <div className="dates-container">
+                        {this.renderInput("created", "Created: ", "date")}
+                        {this.renderInput("updated", "Updated: ", "date")}
+                    </div>
 
-                {isNewEmployee ? this.renderButton("Create") : this.renderButton("Edit")}
-            </form>
+                    {isNewEmployee ? this.renderButton("Create") : this.renderButton("Edit")}
+                    
+                </form>
+                <img src={Curve} alt="curve" className="curve" />
+                <img src={Square} alt="square" className="square-blue-left" />
+                <img src={Square} alt="square" className="square-blue-right" />
+                <div className="square-pink-bottom" />
+            </div>
         )
     }
 }

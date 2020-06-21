@@ -1,0 +1,82 @@
+.form-container {
+    position: relative;
+    overflow: hidden;
+    .form {
+        width: 60%;
+        margin: 0 auto;
+        .float-container {
+            border: solid thin $light-grey;
+            border-radius: 2px;
+            position: relative;
+            padding: 0 3.5rem;
+            margin: 1rem 0;
+            input,
+            select {
+                border: none;
+                outline: 0;
+                padding: 1.1rem 0 1rem;
+                margin-left: 0.5rem;
+                font-size: 1rem;
+                color: $grey-color !important;
+                font-family: "Open Sans", sans-serif;
+                background-color: $light-color !important;
+            }
+
+            // change bg and text color with input autocomplete
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                -webkit-box-shadow: 0 0 0 30px $light-color inset !important;
+            }
+            input:-webkit-autofill {
+                -webkit-text-fill-color: $grey-color !important;
+            }
+            // remove the calendar icn from date input
+            input[type="date"]::-webkit-calendar-picker-indicator,
+            input[type="date"]::-webkit-inner-spin-button {
+                display: none;
+            }
+            input[type="date" i] {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1rem;
+                color: $grey-color;
+            }
+
+            label {
+                color: $purple-color;
+                padding: 1.1rem 0 1rem;
+            }
+            .error {
+                font-size: 0.7rem;
+                color: red;
+                position: absolute;
+                top: 0.2rem;
+                left: 3.5rem;
+            }
+        }
+        input[type="submit"] {
+            @include purple-button();
+            display: flex;
+            margin: 6rem auto;
+        }
+        .disabled {
+            background: $grey-gradient !important;
+            color: $light-grey !important;
+            text-shadow: none !important;
+        }
+        .dates-container {
+            @include flex(space-between, center, row);
+            .dates-container:first-child {
+                padding-left: 0.5rem;
+            }
+            .dates-container:last-child {
+                margin-right: 0.5rem;
+            }
+            .float-container {
+                margin-top: 0;
+                width: 46%;
+            }
+        }
+    }
+}

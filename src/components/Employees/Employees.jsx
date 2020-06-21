@@ -42,8 +42,8 @@ const Employees = () => {
 
     return (
         <div className="employees-container">
-            <div className="employees-title-container">
-                <h1 className="employees-title-text title">Team</h1>
+            <div className="title-container">
+                <h1 className="title-text title">Team</h1>
             </div>
             <div className="container employees-list-container">
                 {renderEmployees()}
