@@ -1,9 +1,14 @@
 // variables
 $purple-color: #5851ea;
-$blue-color: #4137ffd0;
+$blue-color: #2218dbd0;
 $light-color: #fff;
 $navbar-height: 4.5rem;
-$purple-gradient: linear-gradient(0deg, rgba(88,81,234,1) 0%, rgba(59,57,255,1) 100%, rgba(116,116,255,1) 100%);
+$purple-gradient: linear-gradient(
+    0deg,
+    rgba(88, 81, 234, 1) 0%,
+    rgba(59, 57, 255, 1) 100%,
+    rgba(116, 116, 255, 1) 100%
+);
 
 // mixins
 @mixin flex($content, $items, $direction) {
@@ -25,7 +30,7 @@ $purple-gradient: linear-gradient(0deg, rgba(88,81,234,1) 0%, rgba(59,57,255,1) 
 // And set the root font-size for unit mesurements purposes
 html {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 15px;
 
     @media only screen and (max-height: 600px) {
         font-size: 12px;
@@ -41,8 +46,7 @@ body,
 }
 
 .container {
-    width: 70%;
-    height: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -56,6 +60,7 @@ body,
 
 body {
     font-family: "Open Sans", sans-serif;
+    // font-weight: 500;
     // line-height: 1.5rem;
     color: #7b7b7b;
     margin: 0;
@@ -78,15 +83,54 @@ a:visited {
     border-radius: 30px;
     background: $purple-gradient;
     color: $light-color;
-    padding: .6rem 2.5rem;
+    padding: 0.6rem 2.5rem;
     cursor: pointer;
     -webkit-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
     -moz-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
     box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
     text-shadow: 0 -1px 0 $blue-color;
 }
+
+.square-blue-right {
+    transform: rotate(220deg);
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    height: 60px;
+    width: 60px;
+}
+
+.square-blue-left {
+    transform: rotate(5deg);
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    height: 60px;
+    width: 60px;
+}
+
+.curve {
+    z-index: -1;
+    position: absolute;
+    left: 20%;
+    height: 320vh;
+    top: -60%;
+}
+
+.square-pink-bottom {
+    background-color: pink;
+    height: 47px;
+    width: 47px;
+    transform: rotate(-12deg);
+    position: absolute;
+    left: 20%;
+    bottom: 8%;
+}
+
 // Component imports
 // @import "../containers/App/styles";
 // @import "../containers/Login/styles";
-@import "../components/Home/styles";
 @import "../components/NavBar/styles";
+@import "../components/Home/styles";
+@import "../components/Employees/styles";
+@import "../components/Employee/styles";

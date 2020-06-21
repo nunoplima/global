@@ -10,30 +10,36 @@ const Employee = ({ employee, onDelete }) => {
     const formatDate = date => moment(date).format("MMMM Do YYYY");
     
     return (
-        <div className="card">
-            <div className="card-header">
-                <div className="card-header-image">
-                    <img src={photoUrl} alt="employee" />
-                    {/* <FontAwesomeIcon icon={faUserCircle} /> */}
+        <div className="card-container">
+            <div className="card">
+
+                <div className="card-header">
+                    <div className="card-header-image">
+                        <img src={photoUrl} alt="employee" />
+                        {/* <FontAwesomeIcon icon={faUserCircle} /> */}
+                    </div>
+                    <div className="card-header-text-container">
+                        <h4 className="title card-header-text">{name}</h4>
+                        <p className="card-header-text">Employee ID: <span>{id}</span></p>
+                    </div>
+                    <div className="card-header-buttons-container">
+                        <Link className="card-header-buttons" to={`/employees/${id}`}>
+                            <FontAwesomeIcon icon={faPen} size="sm"/>
+                        </Link>
+                        <div className="card-header-buttons">
+                            <FontAwesomeIcon icon={faTimes} size="md" onClick={() => onDelete(id)} />
+                        </div>
+                    </div>
                 </div>
-                <div className="card-header-text">
-                    <h4>{name}</h4>
-                    <p>Employee ID: {id}</p>
+
+                <div className="card-body">
+                    <p>Birthdate: <span>{formatDate(birthdate)}</span></p>
+                    <p>Address: <span>{address}</span></p>
+                    <p>Status: <span>{status}</span></p>
+                    <p>Position: <span>{position}</span></p>
+                    <p>Created: <span>{formatDate(created)}</span></p>
+                    <p>Updated: <span>{formatDate(updated)}</span></p>
                 </div>
-                <div className="card-header-buttons">
-                    <Link to={`/employees/${id}`}>
-                        <FontAwesomeIcon icon={faPen}/>
-                    </Link>
-                    <FontAwesomeIcon icon={faTimes} onClick={() => onDelete(id)}/>
-                </div>
-            </div>
-            <div className="card-body">
-                <p>Birthdate: {formatDate(birthdate)}</p>
-                <p>Address: {address}</p>
-                <p>Status: {status}</p>
-                <p>Position: {position}</p>
-                <p>Created: {formatDate(created)}</p>
-                <p>Updated: {formatDate(updated)}</p>
             </div>
         </div>
     );
