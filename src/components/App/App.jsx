@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Home from "../Home/Home";
 import Employees from "../Employees/Employees";
 import EmployeeForm from "../EmployeeForm/EmployeeForm";
@@ -9,6 +10,7 @@ import Footer from "../Footer/Footer";
 
 const App = () => (
     <>
+        <ToastContainer />
         <NavBar />
         <main>
             <Switch>

@@ -64,7 +64,7 @@ class EmployeeForm extends Form {
                 
                 <form className="form" onSubmit={this.handleSubmit}>
 
-                    {isNewEmployee ? null : this.renderInput("id", "Employee ID", "number")}
+                    {isNewEmployee ? null : this.renderInput("id", "Employee ID: ", "number")}
 
                     {this.renderInput("name", "Name: ", "text")}
                     {this.renderInput("birthdate", "Birthdate: ", "date")}

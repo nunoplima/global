@@ -15,8 +15,11 @@
             margin: 0.5rem;
             cursor: pointer;
         }
+        li:hover {
+            color: $light-grey;
+        }
         .selected {
-            @include button(#fff);
+            @include button($light-color, $light-grey);
             padding: 0.05rem 0.7rem;
             li {
                 color: #5851ea;

@@ -6,6 +6,7 @@ import configureStore from "./store/configureStore";
 import App from "./components/App/App.jsx";
 import * as serviceWorker from "./serviceWorker";
 // main application styles
+import "react-toastify/dist/ReactToastify.css";
 import "./styles/app.scss";
 
 const store = configureStore();
