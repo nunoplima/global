@@ -3,7 +3,7 @@
     position: relative;
     overflow: hidden;
     height: 70vh;
-    font-size: .7rem;
+    font-size: 0.7rem;
     background: $purple-color;
     color: $light-color;
     .footer-container {
@@ -37,7 +37,7 @@
                 }
                 p {
                     cursor: pointer;
-                    margin: .7rem 0;
+                    margin: 0.7rem 0;
                 }
             }
         }
@@ -53,7 +53,6 @@
             p {
                 margin-top: 4rem;
             }
-            
         }
     }
     .footer-curves {
@@ -70,5 +69,42 @@
         z-index: 2;
         top: 0;
         left: 0;
+    }
+}
+
+// media queries
+@media only screen and (max-width: $tablet-width) {
+    .footer {
+        height: 65vh;
+        .footer-container {
+            width: 80%;
+        }
+        .footer-curves {
+            width: 150vw;
+        }
+        .footer-circles {
+            width: 150vw;
+            top: 35%;
+        }
+    }
+}
+
+@media only screen and (max-width: $mobile-width) {
+    .footer {
+        height: 60vh;
+        .footer-container {
+            width: 90%;
+            .footer-social-container {
+                img {
+                    width: 50%;
+                }
+            }
+        }
+        .footer-curves {
+            width: 200vw;
+        }
+        .footer-circles {
+            width: 200vw;
+        }
     }
 }
