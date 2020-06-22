@@ -8,7 +8,6 @@ import FooterCurves from "../../assets/images/curve-1.png";
 import FooterCircles from "../../assets/images/circle-footer.png";
 
 const Footer = ({ history }) => {
-    console.log(history.location.pathname); // /home or /
     const { pathname } = history.location;
     
     return (

@@ -1,13 +1,13 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 
-import { useSelector } from "react-redux";
+const NavBar = ({ history }) => {
+    const { pathname } = history.location;
 
-const NavBar = () => {
-    const { isAdmin } = useSelector((state) => state.user);
     return (
-        <header className={isAdmin ? "solid" : ""}>
+        <header className={pathname !== "/home" ? "solid" : ""}>
             <div className="container navbar">
                 <Link to="/">
                     <img className="logo" src={Logo} alt="logo" />
@@ -24,7 +24,7 @@ const NavBar = () => {
                         <li>Employees</li>
                     </NavLink>
                     
-                    {isAdmin && (
+                    {pathname !== "/home" && (
                         <NavLink className="link title" activeClassName="selected" exact to="/employees/new">
                             <li>New Employee</li>
                         </NavLink>
@@ -35,4 +35,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

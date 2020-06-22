@@ -17,8 +17,10 @@
         }
         .hero-button {
             @include button(#fff);
-            padding: .5rem 3.5rem;
+            padding: 0.9rem 4rem;
             text-decoration: none;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
             color: $purple-color;
         }
     }
@@ -40,7 +42,7 @@
         }
         p {
             margin-top: 1.5rem;
-            font-size: .8rem;
+            font-size: 0.8rem;
         }
     }
     .content-inner-container {
@@ -49,7 +51,8 @@
         @include flex(center, center, row);
         overflow: hidden;
         .content-image {
-            background: url("../../assets/images/img-landing.png") no-repeat center;
+            background: url("../../assets/images/img-landing.png") no-repeat
+                center;
             background-size: contain;
             transform: scale(1.1);
             object-fit: contain;
@@ -63,7 +66,7 @@
                 padding-left: 6rem;
                 width: 80%;
                 h2 {
-                    margin: 1.5rem 0; 
+                    margin: 1.5rem 0;
                 }
                 hr {
                     margin: 0;
@@ -99,7 +102,7 @@
             // top: 70%;
             bottom: -1.5rem;
             // right: -15%;
-            right: -12rem
+            right: -12rem;
         }
     }
 }
