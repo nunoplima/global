@@ -1,0 +1,8 @@
+.not-found-container {
+    height: 80vh;
+    @include flex(center, center, column);
+    .not-found-button {
+        @include purple-button();
+        text-decoration: none;
+    }
+}

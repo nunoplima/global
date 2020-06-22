@@ -13,6 +13,7 @@ const Employees = () => {
 
     useEffect(() => {
         dispatch(getEmployees());
+        window.scrollTo(0, 0);
     }, [dispatch]);
 
     const renderEmployees = () => (

@@ -11,6 +11,7 @@ import Square from "../../assets/images/el-1.png";
 class EmployeeForm extends Form {
     async componentDidMount() {
         try {
+            window.scrollTo(0, 0);
             const { employeeId } = this.props.match.params;
             // if we are looking to create a new employee populate the date fields and return
             if (employeeId === "new") {
@@ -20,7 +21,7 @@ class EmployeeForm extends Form {
             };
             // otherwise get the employee from de database and populate fields
             const { data: { employee } } = await getEmployee(employeeId);
-            this.setState({ data: employee })
+            this.setState({ data: employee });
         } catch(ex) {
             if (ex.response && ex.response.status === 404) {
                 this.props.history.replace("/not-found");
