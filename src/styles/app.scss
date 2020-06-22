@@ -26,13 +26,14 @@ $grey-gradient: linear-gradient(180deg, rgba(212,203,203,1) 0%, rgba(123,123,123
     border-radius: 30px;
     background: $purple-gradient;
     color: $light-color;
-    padding: 0.6rem 2.5rem;
+    padding: 0.9rem 3.2rem;
     cursor: pointer;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
     -webkit-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
     -moz-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
     box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
     text-shadow: 0 -1px 0 $blue-color;
-    font-family: "Poppins", sans-serif;
     border: none;
 }
 
@@ -72,8 +73,6 @@ body,
 
 body {
     font-family: "Open Sans", sans-serif;
-    // font-weight: 500;
-    // line-height: 1.5rem;
     color: $grey-color;
     margin: 0;
     padding: 0;
@@ -89,18 +88,6 @@ a:visited {
 .title {
     font-family: "Poppins", sans-serif;
     color: #000;
-}
-
-.purple-button {
-    border-radius: 30px;
-    background: $purple-gradient;
-    color: $light-color;
-    padding: 0.6rem 2.5rem;
-    cursor: pointer;
-    -webkit-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
-    -moz-box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
-    box-shadow: 0px 20px 36px 1px rgba(158, 158, 158, 1);
-    text-shadow: 0 -1px 0 $blue-color;
 }
 
 .square-blue-right {
@@ -154,3 +141,4 @@ a:visited {
 @import "../components/Employees/styles";
 @import "../components/Employee/styles";
 @import "../components/EmployeeForm/styles";
+@import "../components/Footer/styles";

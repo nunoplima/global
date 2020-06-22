@@ -1,0 +1,74 @@
+.footer {
+    @include flex(center, center, column);
+    position: relative;
+    overflow: hidden;
+    height: 70vh;
+    font-size: .7rem;
+    background: $purple-color;
+    color: $light-color;
+    .footer-container {
+        @include flex(center, center, column);
+        width: 60%;
+        z-index: 2;
+        .footer-upper-section {
+            @include flex(center, center, row);
+            width: 100%;
+            .footer-social-container {
+                @include flex(center, flex-start, column);
+                width: 30%;
+                p {
+                    width: 90%;
+                    line-height: 2;
+                }
+                .footer-social {
+                    @include flex(space-between, flex-start, row);
+                    width: 70%;
+                    .social-icn {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .footer-links-container {
+                @include flex(space-evenly, center, row);
+                width: 70%;
+                h4 {
+                    font-family: "Poppins", sans-serif;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    cursor: pointer;
+                    margin: .7rem 0;
+                }
+            }
+        }
+        .footer-lower-section {
+            width: 100%;
+            margin-top: 3rem;
+            text-align: center;
+            hr {
+                width: 100%;
+                border: solid thin $light-grey;
+                border-radius: 2px;
+            }
+            p {
+                margin-top: 4rem;
+            }
+            
+        }
+    }
+    .footer-curves {
+        position: absolute;
+        height: 70%;
+        width: 100%;
+        top: 20%;
+        left: 0;
+        z-index: 1;
+    }
+    .footer-circles {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+    }
+}

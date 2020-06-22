@@ -5,7 +5,7 @@ import Employee from "../Employee/Employee";
 import { getEmployees, deleteEmployee } from "../../store/employees";
 import { deleteEmployeeFromDB } from "../../services/employeesService";
 import Curve from "../../assets/images/curve.png";
-import Square from "../../assets/images/el-1.svg";
+import Square from "../../assets/images/el-1.png";
 
 const Employees = () => {
     const dispatch = useDispatch();
@@ -42,16 +42,20 @@ const Employees = () => {
 
     return (
         <div className="employees-container">
+
             <div className="title-container">
                 <h1 className="title-text title">Team</h1>
             </div>
+
             <div className="container employees-list-container">
                 {renderEmployees()}
             </div>
+
             <img src={Curve} alt="curve" className="curve" />
             <img src={Square} alt="square" className="square-blue-left" />
             <img src={Square} alt="square" className="square-blue-right" />
             <div className="square-pink-bottom" />
+        
         </div>
     );
 };
