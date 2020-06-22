@@ -35,9 +35,9 @@
             input:-webkit-autofill {
                 -webkit-text-fill-color: $grey-color !important;
             }
-            // remove the calendar icn from date input
-            input[type="date"]::-webkit-calendar-picker-indicator,
-            input[type="date"]::-webkit-inner-spin-button {
+            // remove icns from number and date input
+            input::-webkit-calendar-picker-indicator,
+            input::-webkit-inner-spin-button {
                 display: none;
             }
             input[type="date" i] {

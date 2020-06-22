@@ -19,7 +19,7 @@ $grey-gradient: linear-gradient(
 );
 $desktop-width: 1024px;
 $tablet-width: 769px;
-$mobile-width: 460px;
+$mobile-width: 563px;
 $square-size: 60px;
 $square-small-screen-size: 40px;
 
@@ -31,10 +31,16 @@ $square-small-screen-size: 40px;
     flex-direction: $direction;
 }
 
-@mixin button($color) {
+@mixin button($color, $hover-color) {
     border-radius: 30px;
     background-color: $color;
     padding: 0.1rem 0.6rem;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(201, 201, 201, 1);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(201, 201, 201, 1);
+    box-shadow: inset 0px 0px 5px 0px rgba(201, 201, 201, 1);
+    &:hover {
+        background-color: $hover-color;
+    }
 }
 
 @mixin purple-button() {
@@ -51,11 +57,12 @@ $square-small-screen-size: 40px;
     text-shadow: 0 -1px 0 $blue-color;
     border: none;
     outline: none !important;
+    &:hover {
+        background: $blue-color;
+    }
     @media only screen and (max-width: $mobile-width) {
         padding: 0.7rem 3.2rem;
-        
     }
-
 }
 
 // Main styles
@@ -179,8 +186,10 @@ a:visited {
     position: absolute;
     left: 20rem;
     bottom: 8rem;
-    @media only screen and (max-width: $mobile-width) {
+    @media only screen and (max-width: $tablet-width) {
         left: 7rem;
+    }
+    @media only screen and (max-width: $mobile-width) {
         height: 33px;
         width: 33px;
     }
