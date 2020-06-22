@@ -1,7 +1,3 @@
-// div { 
-//     border: solid red 1px;
-// }
-
 .navbar {
     @include flex(space-between, center, row);
     height: $navbar-height;
@@ -21,6 +17,7 @@
         }
         .selected {
             @include button(#fff);
+            padding: 0.05rem .7rem;
             li {
                 color: #5851EA;
             }
@@ -31,5 +28,4 @@
 
 .solid {
     background: $purple-gradient;
-    // background: rgb(88,81,234);
 }
