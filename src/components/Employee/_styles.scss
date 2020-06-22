@@ -38,7 +38,7 @@
                 cursor: pointer;
                 .card-header-buttons {
                     padding: 0 0.5rem;
-                };
+                }
             }
         }
         .card-body {
@@ -47,5 +47,13 @@
                 margin: 0.3rem 0;
             }
         }
+    }
+}
+
+// media queries
+@media only screen and (max-width: $mobile-width) {
+    .card-container {
+        width: 95%;
+        line-height: 1.7;
     }
 }

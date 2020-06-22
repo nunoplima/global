@@ -83,8 +83,7 @@ class EmployeeForm extends Form {
                 <img src={Curve} alt="curve" className="curve" />
                 <img src={Square} alt="square" className="square-blue-left" />
                 <img src={Square} alt="square" className="square-blue-right" />
-                <div className="square-pink-bottom" />
-            
+                
             </div>
         )
     }

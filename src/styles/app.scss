@@ -2,11 +2,26 @@
 $purple-color: #5851ea;
 $blue-color: #2218dbd0;
 $light-color: #fff;
-$navbar-height: 4.5rem;
-$purple-gradient: linear-gradient(180deg, rgba(88,81,234,1) 0%, rgba(128,128,255,1) 100%);
 $grey-color: #7b7b7b;
-$light-grey: #DFDDDD;
-$grey-gradient: linear-gradient(180deg, rgba(212,203,203,1) 0%, rgba(123,123,123,1) 100%, rgba(116,116,255,1) 100%);
+$light-grey: #dfdddd;
+$navbar-height: 4.5rem;
+$navbar-mobile-height: 7rem;
+$purple-gradient: linear-gradient(
+    180deg,
+    rgba(88, 81, 234, 1) 0%,
+    rgba(128, 128, 255, 1) 100%
+);
+$grey-gradient: linear-gradient(
+    180deg,
+    rgba(212, 203, 203, 1) 0%,
+    rgba(123, 123, 123, 1) 100%,
+    rgba(116, 116, 255, 1) 100%
+);
+$desktop-width: 1024px;
+$tablet-width: 769px;
+$mobile-width: 460px;
+$square-size: 60px;
+$square-small-screen-size: 40px;
 
 // mixins
 @mixin flex($content, $items, $direction) {
@@ -36,6 +51,11 @@ $grey-gradient: linear-gradient(180deg, rgba(212,203,203,1) 0%, rgba(123,123,123
     text-shadow: 0 -1px 0 $blue-color;
     border: none;
     outline: none !important;
+    @media only screen and (max-width: $mobile-width) {
+        padding: 0.7rem 3.2rem;
+        
+    }
+
 }
 
 // Main styles
@@ -47,7 +67,11 @@ html {
     font-size: 15px;
 
     @media only screen and (max-height: 600px) {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    @media only screen and (max-width: $mobile-width) {
+        font-size: 10px;
     }
 }
 
@@ -61,11 +85,6 @@ body {
 #root {
     height: 100%;
     width: 100%;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
 }
 
 * {
@@ -90,6 +109,29 @@ a:visited {
     color: inherit;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    @media only screen and (max-width: $tablet-width) {
+        width: 95%;
+    }
+    @media only screen and (max-width: $mobile-width) {
+        width: 100%;
+    }
+}
+
+.title-container {
+    text-align: center;
+    @include flex(center, center, row);
+    height: 50vh;
+    .title-text {
+        color: $purple-color;
+    }
+    @media only screen and (max-width: $mobile-width) {
+        height: 20vh;
+    }
+}
+
 .title {
     font-family: "Poppins", sans-serif;
     color: #000;
@@ -100,8 +142,16 @@ a:visited {
     position: absolute;
     top: 15rem;
     right: 10rem;
-    height: 60px;
-    width: 60px;
+    height: $square-size;
+    width: $square-size;
+    @media only screen and (max-width: $tablet-width) {
+        right: 3rem;
+    }
+    @media only screen and (max-width: $mobile-width) {
+        height: $square-small-screen-size;
+        width: $square-small-screen-size;
+        top: 8rem;
+    }
 }
 
 .square-blue-left {
@@ -109,16 +159,16 @@ a:visited {
     position: absolute;
     top: 10rem;
     left: 15rem;
-    height: 60px;
-    width: 60px;
-}
-
-.curve {
-    z-index: -1;
-    position: absolute;
-    left: 20rem;
-    height: 320vh;
-    top: -60rem;
+    height: $square-size;
+    width: $square-size;
+    @media only screen and (max-width: $tablet-width) {
+        left: 3rem;
+    }
+    @media only screen and (max-width: $mobile-width) {
+        top: 4.5rem;
+        height: $square-small-screen-size;
+        width: $square-small-screen-size;
+    }
 }
 
 .square-pink-bottom {
@@ -129,14 +179,24 @@ a:visited {
     position: absolute;
     left: 20rem;
     bottom: 8rem;
+    @media only screen and (max-width: $mobile-width) {
+        left: 7rem;
+        height: 33px;
+        width: 33px;
+    }
 }
 
-.title-container {
-    text-align: center;
-    @include flex(center, center, row);
-    height: 50vh;
-    .title-text {
-        color: $purple-color;
+.curve {
+    z-index: -1;
+    position: absolute;
+    left: 20rem;
+    height: 320vh;
+    top: -55rem;
+    @media only screen and (max-width: $tablet-width) {
+        height: 180vh;
+        top: -8rem;
+        left: -4rem;
+        transform: rotate(180deg);
     }
 }
 
@@ -148,4 +208,3 @@ a:visited {
 @import "../components/EmployeeForm/styles";
 @import "../components/Footer/styles";
 @import "../components/NotFound/styles";
-
