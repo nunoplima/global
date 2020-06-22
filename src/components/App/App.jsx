@@ -8,7 +8,6 @@ import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { logUserAsAdmin } from "../../store/user";
-import "./App.css";
 
 const App = () => {
 	const dispatch = useDispatch();

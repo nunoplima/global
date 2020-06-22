@@ -41,7 +41,7 @@ const Home = () => {
                             <h2 className="title">Augmented reality</h2>
                             <hr/>
                             <p>Nullam et sapien cursus, venenatis felis sit amet, commodo risus. Aenean non metus porta, aliquet ipsum dapibus, feugiat risus. Fusce imperdiet semper lectus, in placerat lacus congue at. Nunc tincidunt, tellus eu faucibus ullamcorper</p>
-                            <div className="purple-button title">Learn More</div>
+                            <div className="learn-more-button">Learn More</div>
                         </div>
                     </div>
                     <img src={Curve} alt="curve" className="home-curve" />

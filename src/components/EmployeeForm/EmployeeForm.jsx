@@ -6,7 +6,7 @@ import Form from "../common/Form";
 import { getEmployee } from "../../services/employeesService";
 import { saveEmployee } from "../../store/employees";
 import Curve from "../../assets/images/curve.png";
-import Square from "../../assets/images/el-1.svg";
+import Square from "../../assets/images/el-1.png";
 
 class EmployeeForm extends Form {
     async componentDidMount() {
@@ -54,9 +54,13 @@ class EmployeeForm extends Form {
 
         return (
             <div className="form-container">
+
                 <div className="title-container">
-                    {isNewEmployee ? <h1 className="title-text title">New Employee</h1> : <h1>Edit Employee</h1>}
+                    <h1 className="title-text title">
+                        {isNewEmployee ? "New Employee" : "Edit Employee"}
+                    </h1>
                 </div>
+                
                 <form className="form" onSubmit={this.handleSubmit}>
 
                     {isNewEmployee ? null : this.renderInput("id", "Employee ID", "number")}
@@ -74,14 +78,15 @@ class EmployeeForm extends Form {
                     {isNewEmployee ? this.renderButton("Create") : this.renderButton("Edit")}
                     
                 </form>
+                
                 <img src={Curve} alt="curve" className="curve" />
                 <img src={Square} alt="square" className="square-blue-left" />
                 <img src={Square} alt="square" className="square-blue-right" />
                 <div className="square-pink-bottom" />
+            
             </div>
         )
     }
 }
-
 
 export default connect(null, { saveEmployee })(EmployeeForm);
