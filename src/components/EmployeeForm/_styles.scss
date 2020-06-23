@@ -75,12 +75,30 @@
         input[type="submit"] {
             @include purple-button();
             display: flex;
-            margin: 6rem auto;
+            margin: 5rem auto;
         }
         .disabled {
             background: $grey-gradient !important;
             color: $light-grey !important;
             text-shadow: none !important;
+        }
+        .spinner-container {
+            width: 100%;
+            text-align: center;
+            height: 2rem;
+        }
+        .spinner {
+            align-self: center;
+            position: relative;
+            font-size: 2rem;
+            margin-top: -1rem;
+            animation: spinner 2s linear infinite;
+        }
+        .mock-div {
+            height: 2rem;
+        }
+        @keyframes spinner {
+            to { transform: rotate(360deg); }
         }
     }
 }
