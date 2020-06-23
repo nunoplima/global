@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 axios.interceptors.response.use(null, (error) => {
     const isErrorExpected = error.response && error.response.status >= 400 && error.response.status < 500;
     if (!isErrorExpected) {
-        toast.error("something went wrong");
+        toast.error("Something went wrong");
     }
     return Promise.reject(error);
 });

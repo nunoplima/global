@@ -10,7 +10,7 @@ const Employee = ({ employee, onDelete }) => {
     const formatDate = date => moment(date).format("MMMM Do YYYY");
     
     return (
-        <div className="card-container">
+        <div data-test="component-employee" className="card-container">
             <div className="card">
 
                 <div className="card-header">
@@ -25,8 +25,8 @@ const Employee = ({ employee, onDelete }) => {
                         <Link className="card-header-buttons" to={`/employees/${id}`}>
                             <FontAwesomeIcon icon={faPen} size="xs"/>
                         </Link>
-                        <div className="card-header-buttons">
-                            <FontAwesomeIcon icon={faTimes} size="sm" onClick={() => onDelete(id)} />
+                        <div data-test="delete-button" className="card-header-buttons" onClick={() => onDelete(id)}>
+                            <FontAwesomeIcon icon={faTimes} size="sm" />
                         </div>
                     </div>
                 </div>
