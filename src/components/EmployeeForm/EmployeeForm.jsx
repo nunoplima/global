@@ -48,7 +48,7 @@ class EmployeeForm extends Form {
             .label("Birthdate"),
         address: Joi.string().min(5).max(40).required().label("Address"),
         status: Joi.string().min(4).max(10).required().label("Status"),
-        position: Joi.string().min(4).max(10).required().label("Position"),
+        position: Joi.string().min(4).max(16).required().label("Position"),
         created: Joi.date().required().label("Created"),
         updated: Joi.date().required().label("Updated"),
         photoUrl: Joi.string().optional(),
