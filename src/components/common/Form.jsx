@@ -68,9 +68,17 @@ class Form extends Component {
         );
     };
 
-    renderButton = label => {
+    renderButton = (label) => {
         const isInvalid = this.validate();
-        return <input type="submit" disabled={isInvalid} className={isInvalid ? "disabled" : ""} value={label} />
+        return (
+            <input
+                data-test="component-submit"
+                type="submit"
+                disabled={isInvalid}
+                className={isInvalid ? "disabled" : ""}
+                value={label}
+            />
+        );
     };
 
     handleSubmit = (e) => {

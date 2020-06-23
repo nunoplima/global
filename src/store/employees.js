@@ -58,12 +58,3 @@ export const saveEmployee = (data) => {
 };
 
 export const deleteEmployee = (id) => employeeDeleted({ id });
-
-// export const deleteEmployee = (id) =>
-//     apiCallBegan({
-//         baseUrl,
-//         url: `employees/${id}`,
-//         method: "delete",
-//         onSuccess: employeeDeleted.type,
-//         payload: { id },
-//     });

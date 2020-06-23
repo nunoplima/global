@@ -41,20 +41,24 @@ class EmployeeForm extends Form {
     schema = {
         name: Joi.string().min(2).max(20).required().label("Name"),
         id: Joi.number().label("Employee ID"),
-        birthdate: Joi.date().required().label("Birthdate"),
-        address: Joi.string().min(5).max(30).required().label("Address"),
+        birthdate: Joi.date()
+            .min("1900-01-01")
+            .max(moment().subtract(18, "years").format("YYYY-MM-DD"))
+            .required()
+            .label("Birthdate"),
+        address: Joi.string().min(5).max(40).required().label("Address"),
         status: Joi.string().min(4).max(10).required().label("Status"),
         position: Joi.string().min(4).max(10).required().label("Position"),
-        created: Joi.date().optional().label("Created"),
-        updated: Joi.date().optional().label("Updated"),
+        created: Joi.date().required().label("Created"),
+        updated: Joi.date().required().label("Updated"),
         photoUrl: Joi.string().optional(),
     };
-
+    
     render() {
         const isNewEmployee = this.props.match.params.employeeId === "new";
 
         return (
-            <div className="form-container">
+            <div data-test="component-employee-form" className="form-container">
 
                 <div className="title-container">
                     <h1 className="title-text title">
@@ -64,7 +68,7 @@ class EmployeeForm extends Form {
                 
                 <form className="form" onSubmit={this.handleSubmit}>
 
-                    {isNewEmployee ? null : this.renderInput("id", "Employee ID: ", "number")}
+                    {isNewEmployee ? null : this.renderInput("id", "Employee ID: ", "number", true)}
 
                     {this.renderInput("name", "Name: ", "text")}
                     {this.renderInput("birthdate", "Birthdate: ", "date")}

@@ -24,7 +24,9 @@
                 font-family: "Open Sans", sans-serif;
                 background-color: $light-color !important;
             }
-
+            input[type="text"] {
+                width: 70%;
+            }
             // change bg and text color with input autocomplete
             input:-webkit-autofill,
             input:-webkit-autofill:hover,
