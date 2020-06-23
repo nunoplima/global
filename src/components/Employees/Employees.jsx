@@ -6,10 +6,13 @@ import { getEmployees, deleteEmployee } from "../../store/employees";
 import { deleteEmployeeFromDB } from "../../services/employeesService";
 import Curve from "../../assets/images/curve.png";
 import Square from "../../assets/images/el-1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const Employees = () => {
     const dispatch = useDispatch();
     const employees = useSelector((state) => state.employees.list);
+    const isLoading = useSelector((state) => state.isLoading);
 
     useEffect(() => {
         dispatch(getEmployees());
@@ -45,13 +48,19 @@ const Employees = () => {
         <div className="employees-container">
 
             <div className="title-container">
-                <h1 className="title-text title">Team</h1>
+                <h1 className="title-text title">Team</h1>      
             </div>
 
-            <div className="container employees-list-container">
-                {renderEmployees()}
-            </div>
-
+            {isLoading ? (
+                <div className="spinner-container employees-spinner">
+                    <FontAwesomeIcon className="spinner" icon={faSpinner} />
+                </div>
+            ) : (
+                <div className="container employees-list-container">
+                    {renderEmployees()}
+                </div>
+            )}
+            
             <img src={Curve} alt="curve" className="curve" />
             <img src={Square} alt="square" className="square-blue-left" />
             <img src={Square} alt="square" className="square-blue-right" />

@@ -1,6 +1,9 @@
 .employees-container {
     position: relative;
     overflow: hidden;
+    .employees-spinner {
+        margin-bottom: 6rem;
+    }
     .employees-list-container {
         @include flex(space-between, center, row);
         flex-wrap: wrap;
