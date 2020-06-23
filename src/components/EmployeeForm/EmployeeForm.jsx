@@ -7,6 +7,8 @@ import { getEmployee } from "../../services/employeesService";
 import { saveEmployee } from "../../store/employees";
 import Curve from "../../assets/images/curve.png";
 import Square from "../../assets/images/el-1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 class EmployeeForm extends Form {
     async componentDidMount() {
@@ -82,6 +84,17 @@ class EmployeeForm extends Form {
 
                     {isNewEmployee ? this.renderButton("Create") : this.renderButton("Edit")}
                     
+                    {this.props.isLoading ? (
+                        <div className="spinner-container">
+                            <FontAwesomeIcon
+                                className="spinner"
+                                icon={faSpinner}
+                            />
+                        </div>
+                    ) : (
+                        <div className="mock-div"></div>
+                    )}
+                    
                 </form>
                 
                 <img src={Curve} alt="curve" className="curve" />
@@ -93,4 +106,6 @@ class EmployeeForm extends Form {
     }
 }
 
-export default connect(null, { saveEmployee })(EmployeeForm);
+const mapStateToProps = ({ isLoading }) => ({ isLoading });
+
+export default connect(mapStateToProps, { saveEmployee })(EmployeeForm);
