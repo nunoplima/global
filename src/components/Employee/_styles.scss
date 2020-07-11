@@ -38,6 +38,7 @@
                 cursor: pointer;
                 .card-header-buttons {
                     padding: 0 0.5rem;
+                    color: $grey-color;
                     &:hover {
                         color: $purple-color;
                     }
